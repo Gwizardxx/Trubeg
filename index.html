@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trubeg | Construction & Consultancy Excellence</title>
+    <meta name="description" content="Trubeg - Premium construction consultancy and building solutions. Expert guidance for your architectural dreams.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        /* WARM EARTHY THEME — replaces the cold slate-heavy palette */
+                        primary:   '#2C1810', /* deep warm espresso */
+                        secondary: '#C17A3A', /* rich amber gold    */
+                        accent:    '#8B5E3C', /* saddle brown       */
+                        earth:     '#6B4226', /* terra cotta        */
+                        sand:      '#FDF6EE', /* warm cream         */
+                    },
+                    fontFamily: {
+                        sans:    ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-sand text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Opening Animation -->
+    <div id="opening-animation" class="fixed inset-0 bg-primary z-[100] flex items-center justify-center transition-opacity duration-1000">
+        <div class="text-center">
+            <h1 id="truberg-text" class="text-6xl md:text-8xl font-display font-bold text-white tracking-widest opacity-0 scale-50 transition-all duration-1000 ease-out">
+                TRUBEG
+            </h1>
+            <div id="tagline" class="mt-4 text-amber-400 text-sm md:text-base tracking-[0.3em] uppercase opacity-0 transition-opacity duration-1000 delay-500">
+                Building The Future
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <truberg-navbar></truberg-navbar>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=900&fit=crop" 
+                 alt="Construction Site" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/65 to-sand"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center pt-20">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-amber-500/20 text-amber-400 text-sm font-semibold tracking-wider mb-6 border border-amber-500/30 animate-fade-in-up">
+                EST. 2001 · NAIROBI, KENYA
+            </span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-tight animate-fade-in-up delay-100">
+                Crafting <span class="text-amber-400">Legacies</span><br>
+                In Concrete & Steel
+            </h1>
+            <p class="text-xl md:text-2xl text-stone-300 max-w-3xl mx-auto mb-10 font-light animate-fade-in-up delay-200">
+                Where visionary consultancy meets masterful construction. We don't just build structures — we engineer the future.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-300">
+                <a href="#consultation" class="px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-amber-500/40">
+                    <i data-feather="calendar"></i> Book Consultation
+                </a>
+                <a href="#projects" class="px-8 py-4 bg-transparent border-2 border-white/60 text-white hover:bg-white hover:text-primary rounded-lg font-semibold transition-all duration-300 flex items-center gap-2">
+                    <i data-feather="grid"></i> View Projects
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-feather="chevron-down" class="text-white w-8 h-8"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-amber-50 to-transparent opacity-60"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="h-1 w-12 bg-amber-500"></div>
+                        <span class="text-amber-600 font-semibold tracking-wider uppercase text-sm">Who We Are</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-primary leading-tight">
+                        Architects of Trust,<br>Builders of <span class="text-accent">Tomorrow</span>
+                    </h2>
+                    <div class="text-stone-600 space-y-4">
+                        <p class="leading-relaxed">
+                            For over two decades, <strong class="text-primary">Trubeg</strong> has stood at the
+                            intersection of innovation and tradition in the construction industry. What began as a
+                            boutique consultancy firm in 2001 has evolved into a comprehensive construction powerhouse,
+                            serving both residential visions and commercial ambitions.
+                        </p>
+                        <p class="leading-relaxed">
+                            Our philosophy is grounded in the belief that every structure tells a story. From the initial
+                            soil analysis to the final architectural flourish, we embed sustainability, safety, and
+                            aesthetic excellence into every project. Our team comprises seasoned engineers, visionary
+                            architects, and meticulous project managers who share one obsession: spaces that transcend expectations.
+                        </p>
+                        <p class="leading-relaxed">
+                            Unlike conventional firms, Trubeg specialises in <strong>consultative construction</strong> — a hybrid
+                            approach where expert guidance informs every decision. We navigate zoning laws, optimise material
+                            selections, and ensure your investment appreciates across generations.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-8 pt-8 border-t border-stone-200">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-1">20+</div>
+                            <div class="text-sm text-stone-500">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-1">150+</div>
+                            <div class="text-sm text-stone-500">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-1">95%</div>
+                            <div class="text-sm text-stone-500">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-100 rounded-xl transform rotate-2"></div>
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=640&h=500&fit=crop" 
+                         alt="Trubeg Team at work" class="relative rounded-xl shadow-2xl w-full object-cover h-[500px]">
+                    <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block border border-amber-100">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-amber-100 p-3 rounded-full">
+                                <i data-feather="award" class="text-amber-600 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary mb-1">Certified Excellence</h4>
+                                <p class="text-sm text-stone-500">ISO 9001:2015 certified with multiple industry awards for sustainable building practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-sand">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-600 font-semibold tracking-wider uppercase text-sm">Our Areas of Expertise</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mt-4 mb-6">Comprehensive Construction Solutions</h2>
+                <p class="text-stone-500 text-lg">From conceptual consultancy to turnkey construction, we offer integrated services designed to streamline your building journey.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <truberg-service icon="clipboard"   title="Project Consultancy"        description="Strategic planning, feasibility studies, and architectural guidance to ensure your vision aligns with practical execution and budget constraints." features="Feasibility Analysis,Cost Estimation,Regulatory Compliance"></truberg-service>
+                <!-- FIX: hard-hat icon now rendered via inline SVG in service-card.js -->
+                <truberg-service icon="hard-hat"    title="Commercial Construction"    description="Large-scale industrial and commercial spaces built with precision. Warehouses, office complexes, and retail environments that inspire productivity." features="Structural Engineering,Project Management,Safety Protocols"></truberg-service>
+                <truberg-service icon="home"        title="Residential Development"    description="Custom homes and residential estates that balance aesthetic elegance with functional living. Your dream home, engineered to perfection." features="Custom Architecture,Interior Integration,Smart Home Ready"></truberg-service>
+                <truberg-service icon="refresh-cw"  title="Renovation & Restoration"   description="Breathing new life into existing structures. Historical restoration expertise combined with modern upgrading capabilities." features="Structural Assessment,Heritage Conservation,Modern Upgrades"></truberg-service>
+                <truberg-service icon="droplet"     title="Sustainable Building"       description="Eco-conscious construction utilising green materials, energy-efficient designs, and LEED certification processes." features="Green Materials,Energy Modeling,LEED Certification"></truberg-service>
+                <truberg-service icon="shield"      title="Quality Assurance"          description="Rigorous testing and compliance monitoring throughout the construction lifecycle to guarantee longevity and safety." features="Material Testing,Phase Inspections,Compliance Audits"></truberg-service>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-primary text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5" style="background-image:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&h=900&fit=crop'); background-size:cover; background-position:center;"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <span class="text-amber-400 font-semibold tracking-wider uppercase text-sm">Portfolio</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">Recent Projects & Client Stories</h2>
+                </div>
+                <!-- FIX: data-action attribute wired to openAllProjectsModal() in script.js -->
+                <button data-action="view-all-projects"
+                    class="px-6 py-3 border border-amber-500/50 hover:bg-amber-500 hover:border-amber-500 transition-all duration-300 rounded-lg flex items-center gap-2 font-semibold text-sm">
+                    View All Projects <i data-feather="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <truberg-project image="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=640&h=360&fit=crop" category="Commercial"  title="Armco Business Complex"      location="Moi Avenue District" review="Trubeg transformed our vision into a landmark. Their consultative approach saved us 15% on projected costs."              reviewer="Sarah Wambui, CEO Armco"></truberg-project>
+                <truberg-project image="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=640&h=360&fit=crop" category="Residential" title="The Ruiru Estates"            location="Ruiru Ndani"         review="Their attention to detail is unmatched. They didn't just build our home; they perfected our lifestyle."                reviewer="Jane Romanoff"></truberg-project>
+                <truberg-project image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=640&h=360&fit=crop" category="Industrial"  title="GreenTech Manufacturing Co." location="Industrial Zone"      review="Completed 3 weeks ahead of schedule with zero safety incidents. Truly professional execution."                        reviewer="James Arteta, Plant Director"></truberg-project>
+            </div>
+
+            <!-- Testimonial highlight -->
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-1/3 text-center md:text-left">
+                        <div class="flex gap-1 justify-center md:justify-start mb-4">
+                            <i data-feather="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold mb-2">Client Excellence Award 2023</h3>
+                        <p class="text-stone-400 text-sm">Recognised for highest client retention and satisfaction in the metropolitan construction sector.</p>
+                    </div>
+                    <div class="md:w-2/3 border-l border-white/10 md:pl-8">
+                        <blockquote class="text-xl md:text-2xl font-light italic leading-relaxed text-stone-200">
+                            "In an industry where corners are often cut, Trubeg stands as a beacon of integrity.
+                            Their consultancy prevented costly mistakes before they happened, and the final build
+                            quality exceeded our wildest expectations."
+                        </blockquote>
+                        <div class="mt-6 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center font-bold text-white">JM</div>
+                            <div>
+                                <div class="font-semibold">Joe Michael</div>
+                                <div class="text-sm text-stone-400">Property Developer & Engineer, Karren Holdings</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Booking -->
+    <section id="consultation" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-sand rounded-2xl shadow-xl overflow-hidden border border-amber-100">
+                <div class="grid md:grid-cols-5">
+                    <div class="md:col-span-2 bg-primary p-8 text-white flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-display font-bold mb-4">Book Your Expert Consultation</h3>
+                            <p class="text-stone-300 mb-6">Schedule a 45-minute session with our senior consultants to discuss your project requirements.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <i data-feather="check-circle" class="text-amber-400 w-5 h-5"></i>
+                                    <span class="text-sm">Free initial assessment</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i data-feather="check-circle" class="text-amber-400 w-5 h-5"></i>
+                                    <span class="text-sm">Detailed cost breakdown</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i data-feather="check-circle" class="text-amber-400 w-5 h-5"></i>
+                                    <span class="text-sm">Timeline estimation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-8 border-t border-white/20">
+                            <div class="text-sm text-stone-400 mb-2">Prefer immediate response?</div>
+                            <button onclick="document.querySelector('truberg-chat').openChat()" class="text-amber-400 hover:text-amber-300 flex items-center gap-2 text-sm font-semibold transition-colors">
+                                <i data-feather="message-circle" class="w-4 h-4"></i> Chat with our team?
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-3 p-8">
+                        <form id="booking-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-primary mb-2">Full Name</label>
+                                    <input type="text" required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-primary mb-2">Email Address</label>
+                                    <input type="email" required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white" placeholder="john@example.com">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-primary mb-2">Service Type</label>
+                                <select required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white" 
+                                aria-label="select a service">
+                                    <option value="">Select a service...</option>
+                                    <option value="residential">Residential Construction</option>
+                                    <option value="engineering">Engineering Consultancy</option>
+                                    <option value="commercial">Commercial Construction</option>
+                                    <option value="consultancy">Consultancy Only</option>
+                                    <option value="renovation">Renovation & Restoration</option>
+                                    <option value="sustainable">Sustainable Building</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-primary mb-2">Preferred Date</label>
+                                    <input id="preferred-date"
+                                    aria-label="preferred consultation date" 
+                                    name="preferred-date" 
+                                    type="date" 
+                                    required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-primary mb-2">Preferred Time</label>
+                                    <select id="preferred-time"
+                                    aria-label="preferred consultation time"
+                                     name="preferred-time"
+                                      required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white">
+                                        <option value="">Select time...</option>
+                                        <option value="08:00">08:00 AM</option>
+                                        <option value="09:00">09:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="14:00">02:00 PM</option>
+                                        <option value="15:00">03:00 PM</option>
+                                        <option value="16:00">04:00 PM</option>
+                                        <option value="17:00">05:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-primary mb-2">Project Details</label>
+                                <textarea rows="3" class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white" placeholder="Brief description of your project..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30">
+                                <i data-feather="calendar-check"></i> Confirm Booking
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-sand">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <span class="text-amber-600 font-semibold tracking-wider uppercase text-sm">Get In Touch</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mt-4 mb-6">Visit Our Headquarters</h2>
+                    <p class="text-stone-500 text-lg mb-8">Located in the heart of Nairobi CBD. Drop by for a coffee and discuss your vision with us.</p>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-amber-100 p-3 rounded-xl"><i data-feather="map-pin" class="text-amber-600 w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-primary mb-1">Address</h4>
+                                <p class="text-stone-500">Anniversary Towers, 14th Floor<br>Nairobi CBD, Kenya</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-amber-100 p-3 rounded-xl"><i data-feather="phone" class="text-amber-600 w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-primary mb-1">Phone</h4>
+                                <p class="text-stone-500">Eng Patrick Kirui</p>
+                                <p class="text-stone-500">+254 757-056-893</p>
+                                <p class="text-stone-500">+254 743-067-512</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-amber-100 p-3 rounded-xl"><i data-feather="mail" class="text-amber-600 w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-primary mb-1">Email</h4>
+                                <p class="text-stone-500">consult@trubeg.org<br>projects@trubeg.org</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-amber-100 p-3 rounded-xl"><i data-feather="clock" class="text-amber-600 w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-primary mb-1">Working Hours</h4>
+                                <p class="text-stone-500">Monday – Friday: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 3:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative h-[400px] lg:h-auto rounded-2xl overflow-hidden shadow-xl">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3989.671984270515!2d35.1026219!3d-0.4907249!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182afd8af0f9c0f7%3A0x567de21e908b0d78!2sTebes%20Academy%20Primary%20School%2C%20Kericho!5e0!3m2!1sen!2ske!4v1773659823337!5m2!1sen!2ske" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <truberg-footer></truberg-footer>
+
+    <!-- Chat Widget -->
+    <truberg-chat></truberg-chat>
+
+    <!-- Scripts -->
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/service-card.js"></script>
+    <script src="components/project-card.js"></script>
+    <script src="components/chat-widget.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

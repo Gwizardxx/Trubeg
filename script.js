@@ -1,4 +1,4 @@
-// ─── OPENING ANIMATION ───────────────────────────────────────────────────────
+// ─── OPENING ANIMATION ────
 window.addEventListener('load', () => {
     const anim  = document.getElementById('opening-animation');
     const text  = document.getElementById('truberg-text');
@@ -25,75 +25,162 @@ window.addEventListener('load', () => {
     }, 2800);
 });
 
-// ─── BOOKING FORM ─────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
+// ─── BOOKING FORM ─────
+(function () {
+  // Set min date to today
+  const dateInput = document.getElementById('bf-date');
+  if (dateInput) {
+    dateInput.min = new Date().toISOString().split('T')[0];
+  }
 
-    // Set minimum date to today
-    const dateInput = document.getElementById('preferred-date');
-    if (dateInput) {
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.min = today;
-    }
+  // ── Validation helpers ────────────────────────────────────────────────────
+  function showError(fieldId, errorId, message) {
+    const field = document.getElementById(fieldId);
+    const err   = document.getElementById(errorId);
+    if (field) field.classList.add('border-red-400');
+    if (err)   { err.textContent = message; err.classList.remove('hidden'); }
+  }
 
+  function clearError(fieldId, errorId) {
+    const field = document.getElementById(fieldId);
+    const err   = document.getElementById(errorId);
+    if (field) field.classList.remove('border-red-400');
+    if (err)   err.classList.add('hidden');
+  }
+
+  function validate(data) {
+    let valid = true;
+
+    if (!data.fullName.trim()) {
+      showError('bf-name', 'err-name', 'Full name is required.');
+      valid = false;
+    } else { clearError('bf-name', 'err-name'); }
+
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!data.email.trim()) {
+      showError('bf-email', 'err-email', 'Email is required.');
+      valid = false;
+    } else if (!emailRe.test(data.email)) {
+      showError('bf-email', 'err-email', 'Please enter a valid email.');
+      valid = false;
+    } else { clearError('bf-email', 'err-email'); }
+
+    if (!data.serviceType) {
+      showError('bf-service', 'err-service', 'Please select a service.');
+      valid = false;
+    } else { clearError('bf-service', 'err-service'); }
+
+    if (!data.preferredDate) {
+      showError('bf-date', 'err-date', 'Please choose a date.');
+      valid = false;
+    } else { clearError('bf-date', 'err-date'); }
+
+    if (!data.preferredTime) {
+      showError('bf-time', 'err-time', 'Please choose a time.');
+      valid = false;
+    } else { clearError('bf-time', 'err-time'); }
+
+    return valid;
+  }
+
+  // ── Loading state ─────────────────────────────────────────────────────────
+  function setLoading(isLoading) {
+    const btn     = document.getElementById('bf-submit');
+    const content = document.getElementById('bf-btn-content');
+    btn.disabled  = isLoading;
+    content.innerHTML = isLoading
+      ? `<svg class="animate-spin w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+         </svg> Sending...`
+      : `<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Confirm Booking`;
+  }
+
+  function showServerError(message) {
+    const banner = document.getElementById('booking-error-banner');
+    const text   = document.getElementById('booking-error-text');
+    text.textContent = message;
+    banner.classList.remove('hidden');
+  }
+
+  function hideServerError() {
+    document.getElementById('booking-error-banner').classList.add('hidden');
+  }
+
+  // ── Show success state ────────────────────────────────────────────────────
+  function showSuccess(message) {
+    document.getElementById('booking-form').classList.add('hidden');
+    const successEl = document.getElementById('booking-success');
+    successEl.classList.remove('hidden');
+    successEl.classList.add('flex');
+    document.getElementById('success-message').textContent = message;
+    if (window.feather) feather.replace(); // re-render feather icons in success panel
+  }
+
+  // ── Reset form ────────────────────────────────────────────────────────────
+  window.resetBookingForm = function () {
     const form = document.getElementById('booking-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+    form.reset();
+    form.classList.remove('hidden');
+    const successEl = document.getElementById('booking-success');
+    successEl.classList.add('hidden');
+    successEl.classList.remove('flex');
+    hideServerError();
+  };
 
-            const name    = form.querySelector('input[type="text"]')?.value.trim();
-            const email   = form.querySelector('input[type="email"]')?.value.trim();
-            const service = form.querySelector('select')?.value;
-            const date    = document.getElementById('preferred-date')?.value;
-            const time    = document.getElementById('preferred-time')?.value;
+  // ── Form submit ───────────────────────────────────────────────────────────
+  document.getElementById('booking-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    hideServerError();
 
-            if (!name || !email || !service || !date || !time) {
-                showToast('Please fill in all required fields.', 'error');
-                return;
-            }
+    const data = {
+      fullName:       document.getElementById('bf-name').value,
+      email:          document.getElementById('bf-email').value,
+      serviceType:    document.getElementById('bf-service').value,
+      preferredDate:  document.getElementById('bf-date').value,
+      preferredTime:  document.getElementById('bf-time').value,
+      projectDetails: document.getElementById('bf-details').value,
+    };
 
-            // Simulate submission
-            const btn = form.querySelector('button[type="submit"]');
-            const original = btn.innerHTML;
-            btn.innerHTML = `<svg class="animate-spin" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Confirming...`;
-            btn.disabled = true;
+    if (!validate(data)) return;
 
-            setTimeout(() => {
-                btn.innerHTML = original;
-                btn.disabled = false;
-                form.reset();
-                showToast(`✅ Booking confirmed for ${date} at ${time}. We'll email you shortly, ${name}!`, 'success');
-            }, 1800);
-        });
+    setLoading(true);
+
+    try {
+      const res  = await fetch('/api/book', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(data),
+      });
+
+      const json = await res.json();
+
+      if (res.ok && json.success) {
+        showSuccess(json.message || 'Booking confirmed! Check your email.');
+      } else {
+        showServerError(json.error || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      showServerError('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
     }
+  });
 
-    // Intersection observer for fade-in animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.animate-fade-in-up').forEach(el => {
-        observer.observe(el);
+  // Clear field errors on input
+  ['bf-name', 'bf-email', 'bf-service', 'bf-date', 'bf-time'].forEach(function(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', function() {
+      el.classList.remove('border-red-400');
+      const errMap = { 'bf-name': 'err-name', 'bf-email': 'err-email', 'bf-service': 'err-service', 'bf-date': 'err-date', 'bf-time': 'err-time' };
+      const errEl = document.getElementById(errMap[id]);
+      if (errEl) errEl.classList.add('hidden');
     });
-});
+    el.addEventListener('change', function() { el.dispatchEvent(new Event('input')); });
+  });
 
-// ─── VIEW ALL PROJECTS BUTTON ─────────────────────────────────────────────────
-// Attach to the "View All Projects" button in the Projects section
-document.addEventListener('DOMContentLoaded', () => {
-    // The button is rendered inside truberg-navbar via innerHTML — use event delegation
-    document.addEventListener('click', (e) => {
-        const btn = e.target.closest('[data-action="view-all-projects"]');
-        if (btn) {
-            e.preventDefault();
-            openAllProjectsModal();
-        }
-    });
-});
+})();
 
 function openAllProjectsModal() {
     // Remove existing modal if any
@@ -180,7 +267,7 @@ function openAllProjectsModal() {
     document.addEventListener('keydown', escHandler);
 }
 
-// ─── LEGAL MODAL (Privacy Policy & Terms) ────────────────────────────────────
+// ─── LEGAL MODAL (Privacy Policy & Terms) ─────
 const legalContent = {
     privacy: {
         title: 'Privacy Policy',
@@ -366,7 +453,7 @@ function showLegalModal(type) {
     document.addEventListener('keydown', esc);
 }
 
-// ─── TOAST NOTIFICATION ───────────────────────────────────────────────────────
+// ─── TOAST NOTIFICATION ────
 function showToast(message, type = 'success') {
     document.getElementById('toast-container')?.remove();
 
@@ -392,3 +479,4 @@ function showToast(message, type = 'success') {
     document.body.appendChild(container);
     setTimeout(() => container.remove(), 5000);
 }
+

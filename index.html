@@ -13,7 +13,7 @@
             theme: {
                 extend: {
                     colors: {
-                        /* WARM EARTHY THEME — replaces the cold slate-heavy palette */
+                        /* WARM EARTHY THEME */
                         primary:   '#2C1810', /* deep warm espresso */
                         secondary: '#C17A3A', /* rich amber gold    */
                         accent:    '#8B5E3C', /* saddle brown       */
@@ -160,13 +160,35 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <truberg-service icon="clipboard"   title="Project Consultancy"        description="Strategic planning, feasibility studies, and architectural guidance to ensure your vision aligns with practical execution and budget constraints." features="Feasibility Analysis,Cost Estimation,Regulatory Compliance"></truberg-service>
-                <!-- FIX: hard-hat icon now rendered via inline SVG in service-card.js -->
-                <truberg-service icon="hard-hat"    title="Commercial Construction"    description="Large-scale industrial and commercial spaces built with precision. Warehouses, office complexes, and retail environments that inspire productivity." features="Structural Engineering,Project Management,Safety Protocols"></truberg-service>
-                <truberg-service icon="home"        title="Residential Development"    description="Custom homes and residential estates that balance aesthetic elegance with functional living. Your dream home, engineered to perfection." features="Custom Architecture,Interior Integration,Smart Home Ready"></truberg-service>
-                <truberg-service icon="refresh-cw"  title="Renovation & Restoration"   description="Breathing new life into existing structures. Historical restoration expertise combined with modern upgrading capabilities." features="Structural Assessment,Heritage Conservation,Modern Upgrades"></truberg-service>
-                <truberg-service icon="droplet"     title="Sustainable Building"       description="Eco-conscious construction utilising green materials, energy-efficient designs, and LEED certification processes." features="Green Materials,Energy Modeling,LEED Certification"></truberg-service>
-                <truberg-service icon="shield"      title="Quality Assurance"          description="Rigorous testing and compliance monitoring throughout the construction lifecycle to guarantee longevity and safety." features="Material Testing,Phase Inspections,Compliance Audits"></truberg-service>
+                <truberg-service icon="clipboard"   
+                title="Project Consultancy"        
+                description="Strategic planning, feasibility studies, and architectural guidance to ensure your vision aligns with practical execution and budget constraints." 
+                features="Feasibility Analysis,Cost Estimation,Regulatory Compliance"></truberg-service>
+
+                <truberg-service icon="hard-hat"    
+                title="Commercial Construction"    
+                description="Large-scale industrial and commercial spaces built with precision. Warehouses, office complexes, and retail environments that inspire productivity." 
+                features="Structural Engineering,Project Management,Safety Protocols"></truberg-service>
+
+                <truberg-service icon="home"        
+                title="Residential Development"    
+                description="Custom homes and residential estates that balance aesthetic elegance with functional living. Your dream home, engineered to perfection." 
+                features="Custom Architecture,Interior Integration,Smart Home Ready"></truberg-service>
+
+                <truberg-service icon="refresh-cw"  
+                title="Renovation & Restoration"   
+                description="Breathing new life into existing structures. Historical restoration expertise combined with modern upgrading capabilities." 
+                features="Structural Assessment,Heritage Conservation,Modern Upgrades"></truberg-service>
+
+                <truberg-service icon="droplet"     
+                title="Sustainable Building"       
+                description="Eco-conscious construction utilising green materials, energy-efficient designs, and LEED certification processes." 
+                features="Green Materials,Energy Modeling,LEED Certification"></truberg-service>
+
+                <truberg-service icon="shield"      
+                title="Quality Assurance"          
+                description="Rigorous testing and compliance monitoring throughout the construction lifecycle to guarantee longevity and safety." 
+                features="Material Testing,Phase Inspections,Compliance Audits"></truberg-service>
             </div>
         </div>
     </section>
@@ -180,7 +202,7 @@
                     <span class="text-amber-400 font-semibold tracking-wider uppercase text-sm">Portfolio</span>
                     <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">Recent Projects & Client Stories</h2>
                 </div>
-                <!-- FIX: data-action attribute wired to openAllProjectsModal() in script.js -->
+                <!-- Data-action attribute wired to openAllProjectsModal() in script.js -->
                 <button data-action="view-all-projects"
                     class="px-6 py-3 border border-amber-500/50 hover:bg-amber-500 hover:border-amber-500 transition-all duration-300 rounded-lg flex items-center gap-2 font-semibold text-sm">
                     View All Projects <i data-feather="arrow-right" class="w-4 h-4"></i>
@@ -188,9 +210,24 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <truberg-project image="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=640&h=360&fit=crop" category="Commercial"  title="Armco Business Complex"      location="Moi Avenue District" review="Trubeg transformed our vision into a landmark. Their consultative approach saved us 15% on projected costs."              reviewer="Sarah Wambui, CEO Armco"></truberg-project>
-                <truberg-project image="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=640&h=360&fit=crop" category="Residential" title="The Ruiru Estates"            location="Ruiru Ndani"         review="Their attention to detail is unmatched. They didn't just build our home; they perfected our lifestyle."                reviewer="Jane Romanoff"></truberg-project>
-                <truberg-project image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=640&h=360&fit=crop" category="Industrial"  title="GreenTech Manufacturing Co." location="Industrial Zone"      review="Completed 3 weeks ahead of schedule with zero safety incidents. Truly professional execution."                        reviewer="James Arteta, Plant Director"></truberg-project>
+                <truberg-project image="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=640&h=360&fit=crop" 
+                category="Commercial"  
+                title="Armco Business Complex"      
+                location="Moi Avenue District" 
+                review="Trubeg transformed our vision into a landmark. Their consultative approach saved us 15% on projected costs."              
+                reviewer="Sarah Wambui, CEO Armco"></truberg-project>
+
+                <truberg-project image="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=640&h=360&fit=crop" 
+                category="Residential" title="The Ruiru Estates"            
+                location="Ruiru Ndani"         
+                review="Their attention to detail is unmatched. They didn't just build our home; they perfected our lifestyle."                
+                reviewer="Jane Romanoff"></truberg-project>
+
+                <truberg-project image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=640&h=360&fit=crop" 
+                category="Industrial"  title="GreenTech Manufacturing Co." 
+                location="Industrial Zone"      
+                review="Completed 3 weeks ahead of schedule with zero safety incidents. Truly professional execution."                        
+                reviewer="James Arteta, Plant Director"></truberg-project>
             </div>
 
             <!-- Testimonial highlight -->
@@ -226,108 +263,187 @@
         </div>
     </section>
 
-    <!-- Consultation Booking -->
-    <section id="consultation" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto bg-sand rounded-2xl shadow-xl overflow-hidden border border-amber-100">
-                <div class="grid md:grid-cols-5">
-                    <div class="md:col-span-2 bg-primary p-8 text-white flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-2xl font-display font-bold mb-4">Book Your Expert Consultation</h3>
-                            <p class="text-stone-300 mb-6">Schedule a 45-minute session with our senior consultants to discuss your project requirements.</p>
-                            <div class="space-y-4">
-                                <div class="flex items-center gap-3">
-                                    <i data-feather="check-circle" class="text-amber-400 w-5 h-5"></i>
-                                    <span class="text-sm">Free initial assessment</span>
-                                </div>
-                                <div class="flex items-center gap-3">
-                                    <i data-feather="check-circle" class="text-amber-400 w-5 h-5"></i>
-                                    <span class="text-sm">Detailed cost breakdown</span>
-                                </div>
-                                <div class="flex items-center gap-3">
-                                    <i data-feather="check-circle" class="text-amber-400 w-5 h-5"></i>
-                                    <span class="text-sm">Timeline estimation</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-8 pt-8 border-t border-white/20">
-                            <div class="text-sm text-stone-400 mb-2">Prefer immediate response?</div>
-                            <button onclick="document.querySelector('truberg-chat').openChat()" class="text-amber-400 hover:text-amber-300 flex items-center gap-2 text-sm font-semibold transition-colors">
-                                <i data-feather="message-circle" class="w-4 h-4"></i> Chat with our team?
-                            </button>
-                        </div>
-                    </div>
+    <!-- TRUBEG BOOKING FORM section
+     Matches existing Tailwind + Feather Icons setup 
+     Connects to /api/book.js serverless function -->
+<section id="consultation" class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto bg-sand rounded-2xl shadow-xl overflow-hidden border border-amber-100">
+      <div class="grid md:grid-cols-5">
 
-                    <div class="md:col-span-3 p-8">
-                        <form id="booking-form" class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-semibold text-primary mb-2">Full Name</label>
-                                    <input type="text" required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white" placeholder="John Doe">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold text-primary mb-2">Email Address</label>
-                                    <input type="email" required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white" placeholder="john@example.com">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-semibold text-primary mb-2">Service Type</label>
-                                <select required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white" 
-                                aria-label="select a service">
-                                    <option value="">Select a service...</option>
-                                    <option value="residential">Residential Construction</option>
-                                    <option value="engineering">Engineering Consultancy</option>
-                                    <option value="commercial">Commercial Construction</option>
-                                    <option value="consultancy">Consultancy Only</option>
-                                    <option value="renovation">Renovation & Restoration</option>
-                                    <option value="sustainable">Sustainable Building</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-semibold text-primary mb-2">Preferred Date</label>
-                                    <input id="preferred-date"
-                                    aria-label="preferred consultation date" 
-                                    name="preferred-date" 
-                                    type="date" 
-                                    required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold text-primary mb-2">Preferred Time</label>
-                                    <select id="preferred-time"
-                                    aria-label="preferred consultation time"
-                                     name="preferred-time"
-                                      required class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white">
-                                        <option value="">Select time...</option>
-                                        <option value="08:00">08:00 AM</option>
-                                        <option value="09:00">09:00 AM</option>
-                                        <option value="10:00">10:00 AM</option>
-                                        <option value="11:00">11:00 AM</option>
-                                        <option value="14:00">02:00 PM</option>
-                                        <option value="15:00">03:00 PM</option>
-                                        <option value="16:00">04:00 PM</option>
-                                        <option value="17:00">05:00 PM</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-semibold text-primary mb-2">Project Details</label>
-                                <textarea rows="3" class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white" placeholder="Brief description of your project..."></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30">
-                                <i data-feather="calendar-circle"></i> Confirm Booking
-                            </button>
-                        </form>
-                    </div>
-                </div>
+        <!-- Left Panel (unchanged) -->
+        <div class="md:col-span-2 bg-primary p-8 text-white flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-display font-bold mb-4">Book Your Expert Consultation</h3>
+            <p class="text-stone-300 mb-6">Schedule a 45-minute session with our senior consultants to discuss your project requirements.</p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <i data-feather="check-circle" class="text-amber-400 w-5 h-5"></i>
+                <span class="text-sm">Free initial assessment</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i data-feather="check-circle" class="text-amber-400 w-5 h-5"></i>
+                <span class="text-sm">Detailed cost breakdown</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i data-feather="check-circle" class="text-amber-400 w-5 h-5"></i>
+                <span class="text-sm">Timeline estimation</span>
+              </div>
             </div>
+          </div>
+          <div class="mt-8 pt-8 border-t border-white/20">
+            <div class="text-sm text-stone-400 mb-2">Prefer immediate response?</div>
+            <button onclick="document.querySelector('truberg-chat').openChat()"
+              class="text-amber-400 hover:text-amber-300 flex items-center gap-2 text-sm font-semibold transition-colors">
+              <i data-feather="message-circle" class="w-4 h-4"></i> Chat with our team?
+            </button>
+          </div>
         </div>
-    </section>
+
+        <!-- Right Panel — Form -->
+        <div class="md:col-span-3 p-8">
+
+          <!-- SUCCESS STATE (hidden by default) -->
+          <div id="booking-success" class="hidden flex flex-col items-center justify-center h-full text-center py-8">
+            <div class="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center mb-6 shadow-lg shadow-amber-500/30">
+              <i data-feather="check" class="text-white w-8 h-8"></i>
+            </div>
+            <span class="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-2">Booking Confirmed</span>
+            <h3 class="text-2xl font-display font-bold text-primary mb-3">We'll Be In Touch</h3>
+            <p id="success-message" class="text-stone-500 text-sm leading-relaxed max-w-xs mb-6">
+              Check your email for confirmation. Our team will confirm within 24 hours.
+            </p>
+            <div class="w-10 h-px bg-amber-400 mb-6"></div>
+            <p class="text-stone-400 text-xs mb-3">Need us sooner?</p>
+            <div class="flex items-center gap-3 mb-8">
+              <a href="tel:+254757056893" class="text-amber-600 hover:text-amber-700 text-sm font-semibold transition-colors">+254 757-056-893</a>
+              <span class="text-stone-300">·</span>
+              <a href="tel:+254743067512" class="text-amber-600 hover:text-amber-700 text-sm font-semibold transition-colors">+254 743-067-512</a>
+            </div>
+            <button onclick="resetBookingForm()"
+              class="px-6 py-2 border border-primary text-primary text-sm font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
+              Book Another Consultation
+            </button>
+          </div>
+
+          <!-- FORM (shown by default) -->
+          <form id="booking-form" class="space-y-5" novalidate>
+
+            <!-- Name + Email -->
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-primary mb-2">
+                  Full Name <span class="text-amber-500">*</span>
+                </label>
+                <input
+                  type="text" id="bf-name" name="fullName"
+                  placeholder="John Doe"
+                  class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white transition-colors">
+                <p class="field-error hidden mt-1 text-xs text-red-500" id="err-name"></p>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-primary mb-2">
+                  Email Address <span class="text-amber-500">*</span>
+                </label>
+                <input
+                  type="email" id="bf-email" name="email"
+                  placeholder="john@example.com"
+                  class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white transition-colors">
+                <p class="field-error hidden mt-1 text-xs text-red-500" id="err-email"></p>
+              </div>
+            </div>
+
+            <!-- Service Type -->
+            <div>
+              <label class="block text-sm font-semibold text-primary mb-2">
+                Service Type <span class="text-amber-500">*</span>
+              </label>
+              <select id="bf-service" name="serviceType"
+                class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white transition-colors"
+                aria-label="select a service">
+                <option value="">Select a service...</option>
+                <option value="Residential Construction">Residential Construction</option>
+                <option value="Engineering Consultancy">Engineering Consultancy</option>
+                <option value="Commercial Construction">Commercial Construction</option>
+                <option value="Consultancy Only">Consultancy Only</option>
+                <option value="Renovation & Restoration">Renovation & Restoration</option>
+                <option value="Sustainable Building">Sustainable Building</option>
+                <option value="Other">Other</option>
+              </select>
+              <p class="field-error hidden mt-1 text-xs text-red-500" id="err-service"></p>
+            </div>
+
+            <!-- Date + Time -->
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-primary mb-2">
+                  Preferred Date <span class="text-amber-500">*</span>
+                </label>
+                <input
+                  type="date" id="bf-date" name="preferredDate"
+                  aria-label="preferred consultation date"
+                  class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white transition-colors">
+                <p class="field-error hidden mt-1 text-xs text-red-500" id="err-date"></p>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-primary mb-2">
+                  Preferred Time <span class="text-amber-500">*</span>
+                </label>
+                <select id="bf-time" name="preferredTime"
+                  aria-label="preferred consultation time"
+                  class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white transition-colors">
+                  <option value="">Select time...</option>
+                  <option value="08:00 AM">08:00 AM</option>
+                  <option value="09:00 AM">09:00 AM</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="02:00 PM">02:00 PM</option>
+                  <option value="03:00 PM">03:00 PM</option>
+                  <option value="04:00 PM">04:00 PM</option>
+                  <option value="05:00 PM">05:00 PM</option>
+                </select>
+                <p class="field-error hidden mt-1 text-xs text-red-500" id="err-time"></p>
+              </div>
+            </div>
+
+            <!-- Project Details -->
+            <div>
+              <label class="block text-sm font-semibold text-primary mb-2">
+                Project Details
+                <span class="text-stone-400 font-normal text-xs ml-1">— optional</span>
+              </label>
+              <textarea
+                id="bf-details" name="projectDetails" rows="3"
+                placeholder="Brief description of your project..."
+                class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 bg-white transition-colors resize-y"></textarea>
+            </div>
+
+            <!-- Server Error Banner -->
+            <div id="booking-error-banner"
+              class="hidden px-4 py-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-600 flex items-start gap-2">
+              <i data-feather="alert-circle" class="w-4 h-4 mt-0.5 shrink-0"></i>
+              <span id="booking-error-text"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="bf-submit"
+              class="w-full py-4 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30 disabled:opacity-60 disabled:cursor-not-allowed">
+              <span id="bf-btn-content" class="flex items-center gap-2">
+                <i data-feather="calendar" class="w-4 h-4"></i> Confirm Booking
+              </span>
+            </button>
+
+            <p class="text-center text-stone-400 text-xs">
+              By booking, you agree to be contacted by our team. No spam, ever.
+            </p>
+
+          </form>
+        </div><!-- /right panel -->
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-24 bg-sand">
